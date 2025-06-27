@@ -1,11 +1,22 @@
-import java.util.Scanner;
+import java.util.*;
 
 class Tournament {
-    String tName = "";
-    public int addPlayer()
+    String name, game;
+    ArrayList<Player> players;
+    public Tournament(String tName, String tGame)
+    {
+        this.name = tName;
+        this.game = tGame;
+    }
+
+    // Adds a player to the bracket
+    public int addPlayer(String bracket)
     {// TODO
+        //players.add 
         return 0;
     }
+
+    // Creates a bracket
     public int bracketMaker()
     {// TODO
         return 0;
@@ -14,9 +25,9 @@ class Tournament {
     public String nameChanger() {
         Scanner scan = new Scanner(System.in);
         System.out.println("What would you like to name your tournament? ");
-        this.tName = scan.nextLine();
+        this.name = scan.nextLine();
         scan.close();
-        return this.tName;
+        return this.name;
     }
     public static void main(String[] args)
     {
