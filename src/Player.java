@@ -1,11 +1,11 @@
 class Player {
-    // name, rank, standing
+    // name, rank, seed
     String name;
-    int rank, standing;
+    int rank, seed;
     public Player(String pName) {
         this.name = pName;
         this.rank = 0;
-        this.standing = 0;
+        this.seed = 0;
     }
 
     // Getters and Setters
@@ -23,6 +23,16 @@ class Player {
 
     public int getRank() {
         return this.rank;
+    }
+
+    public void setSeed(int newSeed)
+    {
+        this.seed = newSeed;
+    }
+
+    public int getSeed()
+    {
+        return this.seed;
     }
 
     public static void main(String[] args)

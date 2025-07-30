@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Bracket {
     String name;
-    ArrayList<Player> players;
+    ArrayList<Player> players, matches;
     public Bracket(String bName)
     {
         this.name = bName;
@@ -13,6 +13,7 @@ public class Bracket {
     {
         Player newPlayer = new Player(playerName);
         players.add(newPlayer);
+        seeder(newPlayer);
         return true;
     }
 
@@ -37,7 +38,18 @@ public class Bracket {
         this.name = newName;
     }
 
-    // Sorts the bracket
+    // Seeds everyone in the tournament, for now it assigns seed based off when they entered the tournament.
+    // REVISIT
+    private void seeder(Player seedIt)
+    {
+        int seed =  1;
+        seedIt.setSeed(seed);
+        seed++;
+    }
+
+
+
+    // Sorts the bracket based on players seed, ascending from 1
     //TODO
     private void bracketSorter()
     {
@@ -104,6 +116,12 @@ public class Bracket {
             i++;
             r++;
         }
+    }
+
+    // Puts the players into their matches
+    private ArrayList<Player> matchMaker(ArrayList<Player> seededBracket)
+    {
+        return matches;
     }
 
     public static void main(String[] args) {
