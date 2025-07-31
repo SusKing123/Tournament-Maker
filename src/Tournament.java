@@ -17,9 +17,13 @@ class Tournament {
     }
 
     // Creates a bracket
-    public int bracketMaker()
+    public void bracketMaker()
     {// TODO
-        return 0;
+        Scanner myScan = new Scanner(System.in);
+        System.out.println("What would you like to name the bracket? ");
+        String newName = myScan.nextLine();
+        Bracket newBracket = new Bracket(newName);
+        System.out.println(newName + " has been created");
     }
 
     public String nameChanger() {

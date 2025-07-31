@@ -22,7 +22,7 @@ public class Bracket {
     {
         for(int i = 0; i < players.size(); i++)
         {
-            if(players.get(i).getName() == playerName)
+            if(players.get(i).getName().equals(playerName))
             {
                 players.remove(i);
                 return true;
