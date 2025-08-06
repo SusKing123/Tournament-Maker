@@ -22,7 +22,7 @@ public class Bracket {
     {
         for(int i = 0; i < players.size(); i++)
         {
-            if(players.get(i).getName().equals(playerName))
+            if(players.get(i).name.equals(playerName))
             {
                 players.remove(i);
                 return true;
@@ -51,15 +51,17 @@ public class Bracket {
 
     // Sorts the bracket based on players seed, ascending from 1
     //TODO
-    private void bracketSorter()
+    private void seedSorter()
     {
         ArrayList<Player> temp = players;
+        mergeSort(temp);
     }
 
-    private static void mergeSort(int[] array)
+    // Sorts an array in ascendiing order
+    private static void mergeSort(ArrayList<Player> array)
     {
-        int length = array.length;
-        if (length <= 1) return;
+        int length = array.size();
+        if (length <= 1) return; //base case
 
         int middle = length / 2;
         int[] left = new int[middle];
@@ -83,6 +85,7 @@ public class Bracket {
         merge(left,right,array);
     }
 
+    // Helper function for merge
     private static void merge(int[] left, int[] right, int[] array)
     {
         int leftSize = array.length / 2;
